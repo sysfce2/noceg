@@ -2,6 +2,11 @@
 [![GitHub All Releases](https://img.shields.io/github/downloads/iArtorias/noceg/total.svg)](https://github.com/iArtorias/noceg/releases)
 > Patch Valve's CEG DRM for legally owned games to ensure long-term accessibility and preservation.
 
+> [!IMPORTANT]  
+> NoCEG only works with legally owned games. The game executable that Steam downloads only works with your account and system. NoCEG needs that information to work.
+
+> [!CAUTION]
+> This should only be used for personal backups. The final executable still has your hardware info, and is illegal to distribute.
 ---
 
 ## Overview
@@ -25,7 +30,7 @@ This repository includes **three core tools** required for resolving and patchin
 
 ---
 
-## 🛠️ Installation & Usage
+## 🛠️ Usage
 
 ### **1. Download the latest release**
 
