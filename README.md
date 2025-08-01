@@ -52,8 +52,8 @@ Or simply **drag and drop** the executable onto `noceg_signatures.exe`.
 
 ### **3. Inject the runtime library**
 
-- Copy `steam_api.dll` from the NoCEG package into the game’s directory.
 - Rename the original `steam_api.dll` to `steam_api_org.dll`.
+- Copy `steam_api.dll` from the NoCEG package into the game’s directory.
 - Place the generated `noceg.json` file into the same folder.
 
 Now, launch the game. A confirmation window should appear:
@@ -136,6 +136,7 @@ A modified version will be generated with a suffix like `_noceg.exe` or `_noceg.
 ✔ Sniper Elite V2
 ✔ Sniper Elite Nazi Zombie Army
 ✔ Sniper Elite Nazi Zombie Army 2
+✔ Spec Ops: The Line
 ✔ The Amazing Spider-Man
 ✔ The Bureau: XCOM Declassified
 ✔ The Darkness II
@@ -183,7 +184,7 @@ This project uses the following open-source libraries:
 
 ## 📄 License
 
-Check [LICENSE.md](LICENSE.md).
+Check [LICENSE](LICENSE).
 
 --- 
 
