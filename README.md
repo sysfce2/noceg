@@ -129,6 +129,8 @@ A modified version will be generated with a suffix like `_noceg.exe` or `_noceg.
 ✔ Prototype 2
 ✔ Risen 2
 ✔ Risen 2 Demo
+✔ Saints Row: The Third
+✔ Saints Row IV Inauguration Station
 ✔ Sid Meier's Ace Patrol
 ✔ Sid Meier's Ace Patrol: Pacific Skies
 ✔ Sid Meier's Civilization V
