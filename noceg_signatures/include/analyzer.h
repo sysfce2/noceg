@@ -327,7 +327,17 @@ private:
 
                 // Check for 'push ecx' instruction before the current call.
                 if (*prev_instruction_ptr == 0x51)
-                    Data::CEG_PROTECTED_STOLEN_FUNCS_v1.emplace( target_func, std::make_tuple( target_func, eip - 1, real_bp ) );
+                {
+                    // lea eax, dword ptr ds:[esi+ebx] <- the final CEG calculated value.
+                    // pop esi <- put the breakpoint here.
+                    const auto pop_esi_ptr = reinterpret_cast<const std::uint8_t *>(bp + 46); // 'pop esi' instruction.
+					const auto pop_ebx_ptr = reinterpret_cast<const std::uint8_t *>(bp + 47); // 'pop ebx' instruction.
+
+                    if (*pop_esi_ptr == 0x5E && *pop_ebx_ptr == 0x5B)
+                        Data::CEG_PROTECTED_STOLEN_FUNCS_v1.emplace( target_func, std::make_tuple( target_func, eip - 1, real_bp + 46 ) );
+                    else
+                        Data::CEG_PROTECTED_STOLEN_FUNCS_v1.emplace( target_func, std::make_tuple( target_func, eip - 1, real_bp ) );
+                }
                 else
                     Data::CEG_PROTECTED_STOLEN_FUNCS_v1.emplace( target_func, std::make_tuple( target_func, eip, real_bp ) );
             }
