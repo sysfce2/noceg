@@ -82,9 +82,12 @@ LONG CALLBACK CEGExceptionHandler(
     switch (code)
     {
         // Custom software exception thrown by the tool.
+        // Windows clears bit 28 so 0xDEADDEAD becomes 0xCEADDEAD
         case 0xCEADDEAD:
+        // Linux doesn't clear bit 28
+        case 0xDEADDEAD:
         {
-            LOG_INFO( "Custom exception reached '0xCEADDEAD'." );
+            LOG_INFO( "Custom exception reached '0x{:08X}'.", code );
 
             // Save the current CPU context for future use.
             state->SetContext( ctx );
