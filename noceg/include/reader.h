@@ -140,7 +140,7 @@ public:
             value = eax + static_cast<std::uint32_t>(base);
 
         else if (type >= 2 && type <= 4)
-            value = eax_calc;
+            value = (base == 0x10000000 || version == 1) ? eax_calc : eax; // Only respect 'eax_calc' for dynamic libraries or older CEG.
 
         data["Value"] = std::format( "0x{:08X}", value );
 
